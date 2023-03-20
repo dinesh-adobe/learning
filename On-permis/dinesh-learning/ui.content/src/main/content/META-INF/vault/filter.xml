@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/dinesh-learning" mode="merge"/>
+    <filter root="/content/dinesh-learning" mode="merge"/>
+    <filter root="/content/dam/dinesh-learning/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/dinesh-learning" mode="merge"/>
+</workspaceFilter>
