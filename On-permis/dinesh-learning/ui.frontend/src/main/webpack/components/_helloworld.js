@@ -35,6 +35,7 @@
                     "\nModel message:\n", model
                 );
             }
+            alert("Hello, I am from Ui.frontend code");
         }
 
         if (config && config.element) {
@@ -79,6 +80,7 @@
 
     if (document.readyState !== "loading") {
         onDocumentReady();
+
     } else {
         document.addEventListener("DOMContentLoaded", onDocumentReady);
     }
