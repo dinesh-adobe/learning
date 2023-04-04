@@ -26,9 +26,11 @@ import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.*;
+import org.apache.sling.settings.SlingSettingsService;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Named;
+import java.util.HashMap;
 import java.util.Optional;
 
 import static org.apache.sling.api.resource.ResourceResolver.PROPERTY_RESOURCE_TYPE;
@@ -73,14 +75,17 @@ public class HelloWorldModel {
     @OSGiService
     private SlingModelFilter slingModelFilter;
 
+    @OSGiService
+    private SlingSettingsService slingSettingsService;
+
 
    /******* Variable Declarations **********/
-
 
     private String message;
 
     @PostConstruct
     protected void init() {
+
         PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
         String currentPagePath = Optional.ofNullable(pageManager)
                 .map(pm -> pm.getContainingPage(currentResource))
@@ -93,6 +98,11 @@ public class HelloWorldModel {
         System.out.println("Current Page " + currentPage);
         System.out.println("Page Tile " + pageTitle);
         System.out.println("Resource " + resource);
+
+
+        /*******To fetch Run modes of instance by slingSettingsService service *********/
+        System.out.println("RunModes " + slingSettingsService.getRunModes().contains("author"));
+
     }
 
     public String getMessage() {
