@@ -36,13 +36,21 @@ import java.util.Optional;
 import static org.apache.sling.api.resource.ResourceResolver.PROPERTY_RESOURCE_TYPE;
 import static org.apache.sling.models.annotations.DefaultInjectionStrategy.OPTIONAL;
 
-@Model(adaptables = {Resource.class, SlingHttpServletRequest.class}, defaultInjectionStrategy =  OPTIONAL)
+@Model(adaptables = {Resource.class}, defaultInjectionStrategy =  OPTIONAL)
 public class HelloWorldModel {
 
     /********* SlingHttpServletRequest.class **************/
 
     @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL,name = JcrConstants.JCR_TITLE)
     private String pageTitle;
+
+    @ScriptVariable
+    SlingHttpServletRequest servletRequest;
+
+    @Self
+    SlingHttpServletRequest request;
+
+
 
     @ValueMapValue
     @Named("jcr:title")
