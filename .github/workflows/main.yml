@@ -1,5 +1,3 @@
-# This is a basic workflow to help you get started with Actions
-
 name: CI
 
 on:
@@ -15,13 +13,13 @@ jobs:
     steps:
       - name: Pushes to another repository
         id: push_directory
-        uses: dineshkumar6452@github.com/dineshkumar6452/aem-learning@master
+        uses: dineshkumar6452/aem-learning@master
         env:
           SSH_DEPLOY_KEY: ${{ secrets.dinesh-deploy-key }}
         with:
           source-directory: output/
           destination-github-username: 'dineshkumar6452'
-          destination-repository-name: 'dineshkumar6452/aem-learning'
+          destination-repository-name: 'github.com/dineshkumar6452/aem-learning.git'
           user-email: dineshkumar6452@gmail.com
           commit-message: See ORIGIN_COMMIT from $GITHUB_REF
           target-branch: master
