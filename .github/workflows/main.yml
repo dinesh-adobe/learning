@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Pushes to another repository
         id: push_directory
-        uses: https://github.com/dineshkumar6452/aem-learning@master
+        uses: https://github.com/dineshkumar6452/aem-learning
         env:
           SSH_DEPLOY_KEY: ${{ secrets.dinesh-deploy-key }}
         with:
