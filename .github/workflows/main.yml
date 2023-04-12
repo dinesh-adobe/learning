@@ -4,7 +4,7 @@ on:
   push:
     branches: [ master]
   pull_request:
-    branches: [ master, filter-files ]
+    branches: [ master]
 
 jobs:
   build:
@@ -19,7 +19,7 @@ jobs:
         with:
           source-directory: output/
           destination-github-username: 'dineshkumar6452'
-          destination-repository-name: 'github.com/dineshkumar6452/aem-learning.git'
+          destination-repository-name: 'dineshkumar6452/aem-learning@master'
           user-email: dineshkumar6452@gmail.com
           commit-message: See ORIGIN_COMMIT from $GITHUB_REF
           target-branch: master
