@@ -10,7 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: dinesh-adobe/learning@latest
+     
       - uses: dinesh-adobe/learning@master
       - name: Pushes to another repository
         id: push_directory
