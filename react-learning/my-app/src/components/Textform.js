@@ -1,7 +1,4 @@
 import React, {useState} from 'react'
-
-
-
 export default function Textform(props) {
   const [text, setText] = useState('Initial State Text');
   
