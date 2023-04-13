@@ -3,6 +3,7 @@ import About from './components/About';
 import Navbar from "./components/Navbar";
 import Textform from './components/Textform';
 import RegisterForm from './components/RegisterForm';
+import LogIn from './components/LogIn';
 import {   BrowserRouter as Router,  Routes,  Route} from "react-router-dom";
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={  <div className='conatiner'> <Textform heading="Enter text below" /></div>}/>   
         <Route path="/about"  element={<About />}/>
         <Route path="/register"  element={<RegisterForm />}/>    
+        <Route path="/Login"  element={<LogIn />}/>    
       </Routes>
       </div>
     </Router>
